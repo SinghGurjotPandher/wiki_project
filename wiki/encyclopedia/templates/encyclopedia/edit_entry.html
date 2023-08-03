@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit {{Global_Variable}} Entry
+{% endblock %}
+
+{% block body %}
+    <h1> Edit {{Global_Variable}} Entry</h1>
+    <form action = "{% url 'save_changes' %}" method = "GET">
+        {% csrf_token %}
+        <input type = "submit" value = "Save Changes">
+        <br>
+        <br>
+        <textarea name = "q">{{code}}</textarea>
+    </form>
+{% endblock %}
